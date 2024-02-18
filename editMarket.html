@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?= $pageTitle ?></title>
+    <title>Home</title>
     <link rel="stylesheet" href="Atchley_Farms/files/mainStyle.css">
     <link rel="icon" href="Atchley_Farms/images/aflogo.ico">
 </head>
@@ -37,7 +37,7 @@
                         <div class="cell"><input class="cell" type="text" name="open[]" value="8:00am"></div>
                         <div class="cell"><input class="cell" type="text" name="close[]" value="12:30pm"></div>
                         <div class="cell"><input class="cell" type="text" name="address[]" value="5th Street Columbia to Ferry Street Downtown Lafayette"></div>
-                        <div class="cell"><input class="cell" name="visible[]" type="checkbox" value="checked"></div>
+                        <div class="cell"><input class="cell" name="visible[]" type="checkbox" checked value="checked"></div>
                     </div>
 
                     <div class="row">
@@ -46,16 +46,11 @@
                         <div class="cell"><input class="cell" type="text" name="open[]" value="3:30pm"></div>
                         <div class="cell"><input class="cell" type="text" name="close[]" value="7:00pm"></div>
                         <div class="cell"><input class="cell" type="text" name="address[]" value="3065 N Salisbury St. West Lafayette, IN 47906"></div>
-                        <div class="cell"><input class="cell" name="visible[]" type="checkbox" value="checked"></div>
+                        <div class="cell"><input class="cell" name="visible[]" type="checkbox" checked value="checked"></div>
                     </div>
 
                 </div>
-                    <script>
-                        click = function () {
-                            alert("This feature is currently unsupported. :(");
-                        }
-                    </script>
-                <input type="button" value="Apply" onclick="click()">
+                <input type="button" value="Apply" onclick="alert('This feature is currently unsupported. \n :(');">
             </form>
         </div>
         <footer>
