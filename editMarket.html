@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $pageTitle ?></title>
+    <link rel="stylesheet" href="Atchley_Farms/files/mainStyle.css">
+    <link rel="icon" href="Atchley_Farms/images/aflogo.ico">
+</head>
+
+<!-- nav section -->
+<div class="header">
+    <a href="index.html" class="logo">Atchley Farms</a>
+    <div class="header-right">
+        <a class="active" href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </div>
+</div>
+<body>
+<div class="wrapper">
+    <div class="content">
+        <div class="nested-element">
+            <form action="editMarket.html" method="post">
+                <div class="table">
+                    <div class="row rowHeader">
+                        <div class="cell">Name</div>
+                        <div class="cell"> Weekdays</div>
+                        <div class="cell">Open Times</div>
+                        <div class="cell">Close Times</div>
+                        <div class="cell">Location</div>
+                        <div class="cell">Visible</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell"><input class="cell" type="text" name="name[]" value="Lafayette Farmer's Market"></div>
+                        <div class="cell"><input class="cell" type="text" name="weekday[]" value="Saturdays"></div>
+                        <div class="cell"><input class="cell" type="text" name="open[]" value="8:00am"></div>
+                        <div class="cell"><input class="cell" type="text" name="close[]" value="12:30pm"></div>
+                        <div class="cell"><input class="cell" type="text" name="address[]" value="5th Street Columbia to Ferry Street Downtown Lafayette"></div>
+                        <div class="cell"><input class="cell" name="visible[]" type="checkbox" value="checked"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell"><input class="cell" type="text" name="name[]" value="West Lafayette Farmer's Market"></div>
+                        <div class="cell"><input class="cell" type="text" name="weekday[]" value="Wednesdays"></div>
+                        <div class="cell"><input class="cell" type="text" name="open[]" value="3:30pm"></div>
+                        <div class="cell"><input class="cell" type="text" name="close[]" value="7:00pm"></div>
+                        <div class="cell"><input class="cell" type="text" name="address[]" value="3065 N Salisbury St. West Lafayette, IN 47906"></div>
+                        <div class="cell"><input class="cell" name="visible[]" type="checkbox" value="checked"></div>
+                    </div>
+
+                </div>
+                    <script>
+                        click = function () {
+                            alert("This feature is currently unsupported. :(");
+                        }
+                    </script>
+                <input type="button" value="Apply" onclick="click()">
+            </form>
+        </div>
+        <footer>
+            Copyright &copy 2024 Atchley Farms. All Rights Reserved.
+        </footer>
+    </div>
+</div>
+</body>
+</html>
