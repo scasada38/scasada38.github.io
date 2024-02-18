@@ -2,9 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Link Page</title>
+    <title><?= $pageTitle ?></title>
+    <link rel="stylesheet" href="Atchley_Farms/files/mainStyle.css">
+    <link rel="icon" href="Atchley_Farms/images/aflogo.ico">
 </head>
+
+<!-- nav section -->
+<div class="header">
+    <a href="#default" class="logo">Atchley Farms</a>
+    <div class="header-right">
+        <a <?php
+        if ($activePage == "main") {
+            ?> class="active" <?php
+        }
+        ?>
+        href="#home">Home</a>
+        <a <?php
+        if ($activePage == "contact") {
+            ?> class="active" <?php
+        }
+        ?>
+        href="#contact">Contact</a>
+        <a <?php
+        if ($activePage == "about") {
+            ?> class="active" <?php
+        }
+        ?>
+        href="#about">About</a>
+    </div>
+</div>
 <body>
-    <a href="Atchley_Farms/main.php">Click here</a>
+<div class="wrapper">
+    <div class="content">
+        <div class="parent">
+            <div class="child">
+                <h1>This Site is currently under construction</h1>
+                <p>Please check back later for updates in the future.<br>Thank you.</p>
+            </div>
+            <img class="child" src="Atchley_Farms/images/under_construction.png" alt="Under Construction"
+                 style="scale: 50%"/>
+        </div>
+
+        <div class="nested-element">
+            <div class="table">
+                <input type="button" value="Edit" onclick="window.location.href ='editMarket.php'">
+                <div class="row rowHeader">
+                    <div class="cell">Name</div>
+                    <div class="cell">Times</div>
+                    <div class="cell">Location</div>
+                </div>
+                <?php
+    while ($row = $query->fetch_assoc()) {
+                if ($row['visible']) {
+                ?>
+                <div class="row">
+                    <div class="cell"><?= $row['name'] ?></div>
+                    <div class="cell"><?= $row['open'] ?> - <?= $row['close'] ?></div>
+                    <div class="cell"><?= $row['address'] ?></div>
+                </div>
+                <?php
+        }
+    }
+?>
+            </div>
+        </div>
+        <footer>
+            Copyright &copy <?php echo date("Y") ?> Atchley Farms. All Rights Reserved.
+        </footer>
+    </div>
+</div>
 </body>
 </html>
