@@ -22,8 +22,8 @@
             </div>
         
             <div class="dropdown-obj">
-                <button class="dropbtn">English</button>
-                <div class="dropdown-content">
+                <button class="dropbtn" id="dropdown-button">English</button>
+                <div class="dropdown-content" id="dropdown-div">
                     <a href="../en/">English</a>
                     <a href="../jp/"><span lang="jp">日本語</span></a>
                 </div>
@@ -31,8 +31,9 @@
         </div>
     </header>
     
-    <nav>
-        <ul>
+    <nav class="navbar">
+        <div class="hamburger-menu" id="hamburger-menu">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
             <li>
                 <a href="/home/en/">Home</a>
             </li>
@@ -57,8 +58,8 @@
 
     <main class="wrapper">
         
-        <div class="text-flow-container">
-                <div class="text">
+        <div class="flow-container">
+                <div class="left-flow">
                     <h2>See Hiraku in Action!</h2>
                     <p>
                         Welcome to Denseka! — where Denmark and Japan meet!
@@ -67,7 +68,7 @@
                         Every Sunday at 5PM (US EST) 
                     </p>
                 </div>
-                <div class="image">
+                <div class="right-flow">
                     <iframe style="border-radius:12px" 
                         src="https://open.spotify.com/embed/episode/1tjTOgnonJT4KSFgUjtUlC?utm_source=generator&t=0" 
                         width="100%" height="352" frameBorder="0" allowfullscreen="" 

@@ -22,8 +22,8 @@
             </div>
 
             <div class="dropdown-obj">
-                <button class="dropbtn">English</button>
-                <div class="dropdown-content">
+                <button class="dropbtn" id="dropdown-button">English</button>
+                <div class="dropdown-content" id="dropdown-div">
                     <a href="../en/">English</a>
                     <a href="../jp/"><span lang="jp">日本語</span></a>
                 </div>
@@ -31,8 +31,9 @@
         </div>
     </header>
 
-    <nav>
-        <ul>
+    <nav class="navbar">
+        <div class="hamburger-menu" id="hamburger-menu">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
             <li>
                 <a href="/home/en/">Home</a>
             </li>

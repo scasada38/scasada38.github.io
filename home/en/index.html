@@ -22,8 +22,8 @@
             </div>
 
             <div class="dropdown-obj">
-                <button class="dropbtn">English</button>
-                <div class="dropdown-content">
+                <button class="dropbtn" id="dropdown-button">English</button>
+                <div class="dropdown-content" id="dropdown-div">
                     <a href="../en/">English</a>
                     <a href="../jp/"><span lang="jp">日本語</span></a>
                 </div>
@@ -31,8 +31,9 @@
         </div>
     </header>
 
-    <nav>
-        <ul>
+    <nav class="navbar">
+        <div class="hamburger-menu" id="hamburger-menu">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
             <li>
                 <a href="/home/en/">Home</a>
             </li>
@@ -57,8 +58,8 @@
 
     <main>
         <div class="wrapper">
-            <div class="text-flow-container">
-                <div class="text">
+            <div class="flow-container">
+                <div class="left-flow">
                     <h2>A New Way to Learn Japanese</h2>
                     <p>
                         Hiraku offers a fresh approach to language learning. Unlike traditional textbooks, Hiraku
@@ -71,7 +72,7 @@
                     </p>
                     <button type="button" class="shop-button">Show Now!</button>
                 </div>
-                <div class="image">
+                <div class="right-flow">
                     <img src="/files/img/cover.png">
                 </div>
             </div>
@@ -116,8 +117,8 @@
                 craft your unique Hiraku experience with your study buddy.
             </p>
             <h2>Create Your Personalized Japanese Learning Experience with Hiraku</h2>
-            <div class="text-flow-container">
-                <div class="text">
+            <div class="flow-container">
+                <div class="left-flow">
                     <p>
                         Embark on a unique journey of Japanese language acquisition with Hiraku. Through 12 engaging
                         sessions, you'll craft your
@@ -129,7 +130,7 @@
                         learning truly your own.
                     </p>
                 </div>
-                <div class="image">
+                <div class="right-flow">
                     <img src="/files/img/yuki_reading.png">
                 </div>
             </div>
@@ -172,11 +173,40 @@
         </div> <!-- ending wrapper div -->
     </main>
 
-    <img src="/files/img/iu-kun-peer.png" style="display: block; margin: auto;">
+    <img class="footer-image" src="/files/img/iu-kun-peer.png" style="display: block; margin: auto;">
 
     <footer>
         <p>&copy; 2024 Hiraku LLC. All rights reserved.</p>
     </footer>
+
+    <script>
+        // carousel code
+        var slideIndex = 1;
+        showSlide(slideIndex);
+        var next_btn = document.getElementsByClassName("next")[0];
+        var prev_btn = document.getElementsByClassName("prev")[0];
+
+        next_btn.addEventListener("click", function() {
+            changeSlide(1);
+        });
+        prev_btn.addEventListener("click", function() {
+            changeSlide(-1);
+        });
+        function changeSlide(n) {
+        showSlide(slideIndex += n);
+        }
+
+        function showSlide(n) {
+        var i;
+        var slides = document.getElementsByClassName("carousel-item");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+        }
+    </script>
 </body>
 
 </html>

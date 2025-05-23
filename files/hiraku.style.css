@@ -57,6 +57,7 @@ nav {
     padding: 10px 20px;
     text-align: center;
     height: 60px;
+    position: relative;
 }
 nav ul {
     list-style-type: none;
@@ -75,14 +76,22 @@ nav ul li a {
     font-weight: 700;
     font-size: 16px;
     color: #fff;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 nav ul li a:hover {
     text-decoration: underline;
     color: #a4a4a4;
+}
+
+/* Hamburger styles */
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
 
 /* Style The Dropdown Button */
@@ -134,11 +143,6 @@ nav ul li a:hover {
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {background-color: #f1f1f1}
   
-  /* Show the dropdown menu on hover */
-  .dropdown-obj:hover .dropdown-content {
-    display: block;
-  }
-  
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown-obj:hover .dropbtn {
     background-color: #6a6a6a;
@@ -161,6 +165,11 @@ nav ul li a:hover {
 }
 main {
     min-height: 540px;
+    margin-bottom: 50px;
+    transition: margin-top 0.3s ease;
+}
+body.menu-open main {
+  margin-top: 200px; /* adjust based on your nav height */
 }
 main h2 {
     color: #333;
@@ -174,9 +183,6 @@ main p {
 }
 main p + p {
     margin-top: 20px; /* Additional margin between consecutive paragraphs */
-}
-main {
-    margin-bottom: 50px;
 }
 h2 {
     font-size: 45px;
@@ -193,20 +199,20 @@ h2 {
 }
 
 /* content container section */
-.text-flow-container {
+.flow-container {
     display: flex;
 }
 
-.text {
+.left-flow {
     flex: 1;
-    padding-right: 20px; /* Adjust spacing between text and image */
+    padding-right: 20px;
 }
 
-.image {
+.right-flow {
     flex: 1;
     display: flex;
-    justify-content: flex-end; /* Align the image to the right */
-    align-items: center; /* Center the image vertically */
+    justify-content: flex-end;
+    align-items: center;
     padding: 10px;
 }
 
@@ -307,3 +313,63 @@ footer {
     padding: 0px;
   }
   
+  /* mobile section */
+@media (max-width: 760px) {
+
+  header p {
+    font-size: 10px;
+  }
+
+  .hamburger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #12355e;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        display: block;
+        text-align: center;
+        line-height: 50px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  
+    .flow-container {
+    flex-direction: column;
+  }
+
+  .left-flow,
+  .right-flow {
+    padding-right: 0;
+    justify-content: center; /* Optional: center image/text on mobile */
+    text-align: center;       /* Optional: center-align text */
+  }
+
+  .right-flow {
+    margin-top: 15px; /* Optional spacing between text and image */
+  }
+
+  img {
+    max-width: 280px;
+  }
+
+  .parallax {
+    display: none;
+  }
+
+  .footer-image {
+    width: 300px;
+  }
+}

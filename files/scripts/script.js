@@ -15,27 +15,39 @@ coll[i].addEventListener("click", function() {
 });
 }
 
-// carousel code
-var slideIndex = 1;
-showSlide(slideIndex);
-var next_btn = document.getElementsByClassName("next");
-var prev_btn = document.getElementsByClassName("prev");
+// dropdown code
+document.getElementById("dropdown-button").addEventListener('click', () => {
+  document.getElementById("dropdown-div").style.display = "block";
+});
 
-next_btn.addEventListener("click", changeSlide(1));
-next_btn.addEventListener("click", changeSlide(-1));
-
-
-function changeSlide(n) {
-  showSlide(slideIndex += n);
-}
-
-function showSlide(n) {
-  var i;
-  var slides = document.getElementsByClassName("carousel-item");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+window.onclick = function(event) {
+  if (!event.target.closest('.dropdown-obj')) {
+    document.getElementById("dropdown-div").style.display = "none";
   }
-  slides[slideIndex-1].style.display = "block";
 }
+
+// hamburger menu
+const hamburger = document.getElementById('hamburger-menu');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  document.body.classList.toggle('menu-open');
+
+  if (hamburger.textContent === "☰") {
+    hamburger.textContent = "✕";
+  } else {
+    hamburger.textContent = "☰";
+  }
+});
+
+// Auto-close hamburger menu when screen gets big
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 760) {
+    navLinks.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    if (hamburger.textContent === "✕") {
+      hamburger.textContent = "☰";
+    }
+  }
+});
